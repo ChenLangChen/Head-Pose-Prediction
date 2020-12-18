@@ -13,7 +13,8 @@ This task aims at building an end-to-end **CNN** convolutional neural network to
 
 # Exploring the data
 ## Training set distribution
-![alt](screenshots/train_dis.png)
+![alt](screenshots/train_dis.png). 
+<br><br>
 we can see that data is evenly distributed between series 1 and series 2, and for each person, the data is evenly distributed between the 2 series, except for person_3, 0 in series 1.
 ## Split training set into training set & validation set
 In order to make the model generalize better, validation set contains people it has never seen and people it has seen before but in a different series. Therefore, [person_3_series2, person_5_series1, person_5_series2, person_4_series1, person_6_series2] are picked for the validation set. The reason why person_4_series1, person_6_series2 are picked is that, with person_4_series1, the model can predict on a person of series1 whom it has seen but in a different series, and similarly for series 2 with person_6_series2.
