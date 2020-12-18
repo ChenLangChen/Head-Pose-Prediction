@@ -74,7 +74,8 @@ Looking at the learning curves, the 2 models have similar performance. However, 
 MAE of Trainable_DO is more volatile.
 ### Avoiding 'False Negative'
 Due to fact that one of the important applications of this task is driver monitoring, we should avoid a model that predicts a true wide angle as a narrow angle. The definition of a wide angle here is that |angle|(absolute value of angle), the larger, the wider. It's similar to the **false negative**. We want to avoid a situation where the driver is looking away, but the model predict him/her to be looking ahead in the center. 🚨
-![alt](screenshots/down_prediction.png)
+![alt](screenshots/down_prediction.png). 
+<br>
 Amongst the 10 worst predictions for each model. Trainable_model_B is a better model at this point as it has 3 and 1 downward predictions in 'pan' and 'tilt' respectively, while Trainable_DO has 7 and 2 downward predictions in 'pan' and 'tilt' respectively.
 ### Error distribution
 We also looked at the the error distribution of the 2 models through violinplots. For both 'pan' and 'tilt' prediction of both models, the error distribution is quite similar to each other. Regardless of 'pan' or 'tilt' the prediction is more accurate on wide angles (close to -90 or 90). In general and interestingly, 'pan' prediction is better than 'tilt' prediction, and this is probably due to the loss weights [0.7,1.3] assigned to the 2 outputs in the training process.
