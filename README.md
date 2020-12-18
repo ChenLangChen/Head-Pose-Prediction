@@ -6,13 +6,15 @@ This task aims at building an end-to-end **CNN** convolutional neural network to
 
 # Overview of dataset
 ## Training set & Testing set
-<img align="left" width="400" height="200" src="screenshots/train_df.png"> <img align="right" width="400" height="200" src="screenshots/test_df.png">
-<br><br><br>
-<img align="center" width="800" height="450" src="headPictures.png">
+<img align="left" width="400" height="200" src="screenshots/train_df.png"> <img align="left" width="400" height="200" src="screenshots/test_df.png">. 
+
+<br><br><br><br><br><br>
+<img align="center" width="800" height="500" src="screenshots/headPictures.png">
 
 # Exploring the data
 ## Training set distribution
-![alt](screenshots/train_dis.png)
+![alt](screenshots/train_dis.png). 
+<br><br>
 we can see that data is evenly distributed between series 1 and series 2, and for each person, the data is evenly distributed between the 2 series, except for person_3, 0 in series 1.
 ## Split training set into training set & validation set
 In order to make the model generalize better, validation set contains people it has never seen and people it has seen before but in a different series. Therefore, [person_3_series2, person_5_series1, person_5_series2, person_4_series1, person_6_series2] are picked for the validation set. The reason why person_4_series1, person_6_series2 are picked is that, with person_4_series1, the model can predict on a person of series1 whom it has seen but in a different series, and similarly for series 2 with person_6_series2.
@@ -66,19 +68,23 @@ In Trainable_model_B, even though the performance didn't improve and overfitting
 In Trainable_DO, dropout (0.25) is imposed on all fully connected layers but the output layer. The training MAE increased due to dropout, but the validation MAE stays roughly the same and a bit more volatile.
 
 ## Comparing the 2 best models (Trainable_model_B vs Trainable_DO)
-![alt](screenshots/comparing_2models.png)
+![alt](screenshots/comparing_2models.png). 
+<br><br>
 Looking at the learning curves, the 2 models have similar performance. However, the validation
 MAE of Trainable_DO is more volatile.
 ### Avoiding 'False Negative'
 Due to fact that one of the important applications of this task is driver monitoring, we should avoid a model that predicts a true wide angle as a narrow angle. The definition of a wide angle here is that |angle|(absolute value of angle), the larger, the wider. It's similar to the **false negative**. We want to avoid a situation where the driver is looking away, but the model predict him/her to be looking ahead in the center. 🚨
-![alt](screenshots/down_prediction.png)
+![alt](screenshots/down_prediction.png). 
+<br>
 Amongst the 10 worst predictions for each model. Trainable_model_B is a better model at this point as it has 3 and 1 downward predictions in 'pan' and 'tilt' respectively, while Trainable_DO has 7 and 2 downward predictions in 'pan' and 'tilt' respectively.
 ### Error distribution
-We also looked at the the error distribution of the 2 models through violinplots. For both 'pan' and 'tilt' prediction of both models, the error distribution is quite similar to each other. Regardless of 'pan' or 'tilt' the prediction is more accurate on wide angles (close to -90 or 90). In general and interestingly, 'pan' prediction is better than 'tilt' prediction, and this is probably due to the loss weights [0.7,1.3] assigned to the 2 outputs in the training process.
+We also looked at the the error distribution of the 2 models through violinplots. For both 'pan' and 'tilt' prediction of both models, the error distribution is quite similar to each other. Regardless of 'pan' or 'tilt' the prediction is more accurate on wide angles (close to -90 or 90). In general and interestingly, 'pan' prediction is better than 'tilt' prediction, and this is probably due to the loss weights [0.7,1.3] assigned to the 2 outputs in the training process.  
+<br>
 <img align="left" width="350" height="200" src="screenshots/b_pan.png"> <img align="left" width="350" height="200" src="screenshots/b_tilt.png">
 <br><br><br><br><br><br><br>
 <img align="left" width="350" height="200" src="screenshots/do_pan.png"> <img align="left" width="350" height="200" src="screenshots/do_tilt.png">
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>. 
+<br> <br>
 
 ### Final decision
 Combining the learning curves, wide-to-narrow angle prediction numbers and the prediction error distribution, I would like to pick **Trainable_model_B** as the final model.
@@ -101,5 +107,5 @@ Results on independent testing set:
 This [notebook](https://github.com/ChenLangChen/Head-Pose-Prediction/blob/master/HeadPosePrediction.ipynb) was originally written in GoogleColab, which provides an easy way for content orientation through Table of Contents.
 
 # References
-[1]Kaggle.com. 2020. Housing Prices Competition For Kaggle Learn Users. [online] Available at: <https://www.kaggle.com/c/home-data-for-ml-course/discussion/143364> [Accessed 7 September 2020].
-[2]Brownlee, J., 2020. A Gentle Introduction To Batch Normalization For Deep Neural Networks. [online] Machine Learning Mastery. Available at: <https://machinelearningmastery.com/batch- normalization-for-training-of-deep-neural-networks/> [Accessed 7 September 2020].
+- [1]Kaggle.com. 2020. Housing Prices Competition For Kaggle Learn Users. [online] Available at: <https://www.kaggle.com/c/home-data-for-ml-course/discussion/143364> [Accessed 7 September 2020].  
+- [2]Brownlee, J., 2020. A Gentle Introduction To Batch Normalization For Deep Neural Networks. [online] Machine Learning Mastery. Available at: <https://machinelearningmastery.com/batch- normalization-for-training-of-deep-neural-networks/> [Accessed 7 September 2020].
