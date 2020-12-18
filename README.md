@@ -9,7 +9,7 @@ This task aims at building an end-to-end **CNN** convolutional neural network to
 <img align="left" width="400" height="200" src="screenshots/train_df.png"> <img align="left" width="400" height="200" src="screenshots/test_df.png">. 
 
 <br><br><br><br><br><br>
-<img align="center" width="800" height="500" src="headPictures.png">
+<img align="center" width="800" height="500" src="screenshots/headPictures.png">
 
 # Exploring the data
 ## Training set distribution
