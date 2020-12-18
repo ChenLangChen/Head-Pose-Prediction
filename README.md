@@ -107,5 +107,5 @@ Results on independent testing set:
 This [notebook](https://github.com/ChenLangChen/Head-Pose-Prediction/blob/master/HeadPosePrediction.ipynb) was originally written in GoogleColab, which provides an easy way for content orientation through Table of Contents.
 
 # References
-[1]Kaggle.com. 2020. Housing Prices Competition For Kaggle Learn Users. [online] Available at: <https://www.kaggle.com/c/home-data-for-ml-course/discussion/143364> [Accessed 7 September 2020].
-[2]Brownlee, J., 2020. A Gentle Introduction To Batch Normalization For Deep Neural Networks. [online] Machine Learning Mastery. Available at: <https://machinelearningmastery.com/batch- normalization-for-training-of-deep-neural-networks/> [Accessed 7 September 2020].
+- [1]Kaggle.com. 2020. Housing Prices Competition For Kaggle Learn Users. [online] Available at: <https://www.kaggle.com/c/home-data-for-ml-course/discussion/143364> [Accessed 7 September 2020].  
+- [2]Brownlee, J., 2020. A Gentle Introduction To Batch Normalization For Deep Neural Networks. [online] Machine Learning Mastery. Available at: <https://machinelearningmastery.com/batch- normalization-for-training-of-deep-neural-networks/> [Accessed 7 September 2020].
