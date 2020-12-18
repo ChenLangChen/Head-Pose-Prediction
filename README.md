@@ -78,11 +78,13 @@ Due to fact that one of the important applications of this task is driver monito
 <br>
 Amongst the 10 worst predictions for each model. Trainable_model_B is a better model at this point as it has 3 and 1 downward predictions in 'pan' and 'tilt' respectively, while Trainable_DO has 7 and 2 downward predictions in 'pan' and 'tilt' respectively.
 ### Error distribution
-We also looked at the the error distribution of the 2 models through violinplots. For both 'pan' and 'tilt' prediction of both models, the error distribution is quite similar to each other. Regardless of 'pan' or 'tilt' the prediction is more accurate on wide angles (close to -90 or 90). In general and interestingly, 'pan' prediction is better than 'tilt' prediction, and this is probably due to the loss weights [0.7,1.3] assigned to the 2 outputs in the training process.
+We also looked at the the error distribution of the 2 models through violinplots. For both 'pan' and 'tilt' prediction of both models, the error distribution is quite similar to each other. Regardless of 'pan' or 'tilt' the prediction is more accurate on wide angles (close to -90 or 90). In general and interestingly, 'pan' prediction is better than 'tilt' prediction, and this is probably due to the loss weights [0.7,1.3] assigned to the 2 outputs in the training process.  
+<br>
 <img align="left" width="350" height="200" src="screenshots/b_pan.png"> <img align="left" width="350" height="200" src="screenshots/b_tilt.png">
 <br><br><br><br><br><br><br>
 <img align="left" width="350" height="200" src="screenshots/do_pan.png"> <img align="left" width="350" height="200" src="screenshots/do_tilt.png">
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>. 
+<br> <br>
 
 ### Final decision
 Combining the learning curves, wide-to-narrow angle prediction numbers and the prediction error distribution, I would like to pick **Trainable_model_B** as the final model.
