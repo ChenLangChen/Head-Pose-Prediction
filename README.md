@@ -68,7 +68,8 @@ In Trainable_model_B, even though the performance didn't improve and overfitting
 In Trainable_DO, dropout (0.25) is imposed on all fully connected layers but the output layer. The training MAE increased due to dropout, but the validation MAE stays roughly the same and a bit more volatile.
 
 ## Comparing the 2 best models (Trainable_model_B vs Trainable_DO)
-![alt](screenshots/comparing_2models.png)
+![alt](screenshots/comparing_2models.png). 
+<br><br>
 Looking at the learning curves, the 2 models have similar performance. However, the validation
 MAE of Trainable_DO is more volatile.
 ### Avoiding 'False Negative'
